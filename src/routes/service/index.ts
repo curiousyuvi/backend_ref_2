@@ -1,8 +1,5 @@
 import express from "express";
-import multer from "multer";
-import Item from "../../controllers/item";
-
-const upload = multer({ dest: "uploads/" });
+import Service from "../../controllers/service";
 
 const router = express.Router();
 
@@ -17,7 +14,7 @@ const router = express.Router();
  *        200:
  *         description: Retorna um array
  */
-router.get("/api/v1/item", Item.index);
+router.get("/api/v1/service", Service.index);
 
 /**
  * @swagger
@@ -31,7 +28,7 @@ router.get("/api/v1/item", Item.index);
  *      200:
  *        description: Retorna um objeto
  */
-router.get("/api/v1/item/:id", Item.show);
+router.get("/api/v1/item/:id", Service.show);
 
 /**
  * @swagger
@@ -43,7 +40,7 @@ router.get("/api/v1/item/:id", Item.show);
  *      - Item
  */
 
-router.post("/api/v1/item", Item.create);
+router.post("/api/v1/service", Service.create);
 
 /**
  * @swagger
@@ -56,20 +53,20 @@ router.post("/api/v1/item", Item.create);
  *      200:
  *        description:  name, description e id do item na URL
  */
-router.patch("/api/v1/item/:id", Item.update);
+router.patch("/api/v1/service/:id", Service.update);
 
 /**
  * @swagger
- * /item/:id:
+ * /service/:id:
  *   delete:
- *     summary: Delete an item
+ *     summary: Delete an service
  *     tags:
- *     - Item
+ *     - service
  *     responses:
  *       200:
  *         description: Returns code 200
  */
-router.delete("/api/v1/item/:id", Item.deleteItem);
+router.delete("/api/v1/service/:id", Service.deleteItem);
 
 /**
  * @swagger
@@ -86,7 +83,7 @@ router.delete("/api/v1/item/:id", Item.deleteItem);
  *               properties:
  *                 data:
  *                   type: array
- *                   items:
+ *                   services:
  *                     type: object
  *                     properties:
  *                       id:
@@ -98,6 +95,6 @@ router.delete("/api/v1/item/:id", Item.deleteItem);
  *                         description: The user's name.
  *                         example: Leanne Graham
  */
-router.delete("/api/v1/deleteAllItems", Item.deleteAll);
+router.delete("/api/v1/deleteAllServices", Service.deleteAll);
 
 export default router;
