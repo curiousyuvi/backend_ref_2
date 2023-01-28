@@ -1,8 +1,8 @@
 import express from "express";
-import multer from "multer";
+// import multer from "multer";
 import Item from "../../controllers/item";
 
-const upload = multer({ dest: "uploads/" });
+// const upload = multer({ dest: "uploads/" });
 
 const router = express.Router();
 
