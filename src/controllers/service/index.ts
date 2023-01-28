@@ -3,7 +3,13 @@ import Service from "../../models/Service";
 const serviceController = {
   async index(req, res) {
     try {
-      const services = await Service.find();
+      const { type } = req.query;
+      let services = [];
+      if (type) {
+        services = await Service.find({ type });
+      } else {
+        services = await Service.find();
+      }
 
       res.status(200).json({
         status: "success",
