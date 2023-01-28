@@ -1,20 +1,23 @@
 {
   "name": "exhime_backend",
   "version": "1.0.02",
-  "main": "index.js",
+  "main": "dist/server.js",
   "license": "MIT",
   "private": true,
   "scripts": {
+    "prebuild": "rimraf dist",
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
     "postinstall": "yarn build",
     "dev": "ts-node-dev --respawn --clear --transpile-only --ignore-watch node_modules src/server.ts",
+    "predev": "npm run build",
     "dev-debug": "ts-node-dev --debug --respawn --transpile-only --ignore-watch node_modules src/server.ts",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "start": "node dist/server.js",
     "test": "jest",
     "dev-test": "jest --runInBand --watch",
-    "mongo-docker": "sudo docker run -p 27017:27017 -v ${PWD}/localdb/mongo:/data/db mongo"
+    "mongo-docker": "sudo docker run -p 27017:27017 -v ${PWD}/localdb/mongo:/data/db mongo",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",

@@ -1,7 +1,16 @@
 {
   "version": 2,
+  "public": true,
   "builds": [
-    { "src": "package.json", "use": "@vercel/node" },
-    { "src": "src/**/*", "use": "@vercel/static" }
+    {
+      "src": "src/server.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/server.ts"
+    }
   ]
 }
