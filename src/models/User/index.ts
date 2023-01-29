@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import mongoose from "mongoose";
 import validator from "validator";
 import bcrypt from "bcryptjs";
@@ -92,7 +91,6 @@ userSchema.methods.generateAuthToken = async function () {
 };
 
 userSchema.statics.findByCredentials = async (email, password) => {
-  // eslint-disable-next-line no-use-before-define
   const user: any = await User.findOne({ email });
   if (!user) return false;
   const isPasswordMatch = await bcrypt.compare(password, user.password);

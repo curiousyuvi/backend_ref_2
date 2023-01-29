@@ -7,6 +7,7 @@ const router = express.Router();
 router.get("/api/v1/user", User.index);
 router.get("/api/v1/user/:id", User.show);
 router.get("/api/v1/user/me/auth", auth, User.loggedUser);
+router.get("/api/v1/user/verify/:token", User.verify);
 router.post("/api/v1/user", User.create);
 router.patch("/api/v1/user/:id", User.update);
 router.delete("/api/v1/user/:id", User.deleteUser);

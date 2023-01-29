@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
 import User from "../models/User";
-// eslint-disable-next-line consistent-return
 const auth = async (req, res, next) => {
   try {
-    const token = req.header("Authorization").replace("Bearer ", "");
+    // const token = req.header("Authorization").replace("Bearer ", "");
+    const token = req.cookies.token;
 
     if (!token) {
       next();

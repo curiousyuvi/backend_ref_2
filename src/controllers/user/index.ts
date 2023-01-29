@@ -1,5 +1,7 @@
-import checkIfExists from "src/helpers/checkUserExists";
+import checkIfExists from "../../helpers/checkUserExists";
+import { sendVerificationEmail } from "../../helpers/sendVerificationEmail";
 import User from "../../models/User";
+import jwt from "jsonwebtoken";
 
 const userController = {
   async index(req, res) {
@@ -41,38 +43,44 @@ const userController = {
     }
   },
 
-  // async create(req, res) {
-  //   try {
-  //     const user: any = await User.create(req.body)
-  //     await user.generateAuthToken()
+  async verify(req, res) {
+    try {
+      const { token } = req.params;
+      const data: any = jwt.verify(token, process.env.JWT_SECRET);
+      const user: any = await User.create(data.data);
+      await user.generateAuthToken();
+      await user.save();
 
-  //     await user.save()
-
-  //     res.status(200).json({ status: 'success', message: 'User created',
-  //  data: { token: user.token } })
-  //   } catch (error) {
-  //     res.status(400).json({
-  //       status: 'error',
-  //       message: error.message,
-  //     })
-  //   }
-  // },
+      res.status(200).json({
+        status: "success",
+        message: "User created",
+        data: { user },
+      });
+    } catch (error) {
+      res.status(400).json({
+        status: "error",
+        message: error.message,
+      });
+    }
+  },
 
   async create(req, res) {
     try {
       const userData = req.body;
-      const exists = await checkIfExists(userData.email);
+      const exists = await checkIfExists(userData?.email);
 
       if (exists)
         res.status(403).json({
           status: "failute",
           message: "Email already exists",
         });
-      else
+      else {
+        await sendVerificationEmail(userData?.email, userData);
         res.status(200).json({
           status: "success",
           message: "Verfication email sent",
         });
+      }
     } catch (error) {
       res.status(400).json({
         status: "error",
