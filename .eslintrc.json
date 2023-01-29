@@ -30,6 +30,7 @@
     "comma-dangle": "off",
     "quotes": "off",
     "semi": "off",
+    "linebreak-style": "off",
     "eqeqeq": [
       "warn"
       // "smart"

@@ -41,21 +41,6 @@ const userSchema = new mongoose.Schema(
       required: [true, "Please provide your password"],
       minLength: 8,
     },
-    passwordConfirm: {
-      type: String,
-      minLength: 8,
-      // works only in create and save
-      // does not work in findOneAndUpdate
-      // required: true,
-      validate: [
-        {
-          validator(field: any) {
-            return field === this.password;
-          },
-          message: "Password does not match",
-        },
-      ],
-    },
     token: String,
   },
   {
