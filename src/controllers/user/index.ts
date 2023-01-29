@@ -1,105 +1,137 @@
-import User from '../../models/User'
+import checkIfExists from "../../helpers/checkUserExists";
+import { sendVerificationEmail } from "../../helpers/sendVerificationEmail";
+import User from "../../models/User";
+import jwt from "jsonwebtoken";
 
 const userController = {
   async index(req, res) {
     try {
-      const user = await User.find()
+      const user = await User.find();
       res.status(200).json({
-        status: 'success',
+        status: "success",
         data: user,
-      })
+      });
     } catch (error) {
       res.status(400).json({
-        status: 'error',
+        status: "error",
         message: error.message,
-      })
+      });
     }
   },
   async show(req, res) {
     try {
-      const { id } = req.params
-      const user = await User.findById(id)
+      const { id } = req.params;
+      const user = await User.findById(id);
 
-      res.status(200).json({ status: 'success', data: user })
+      res.status(200).json({ status: "success", data: user });
     } catch (error) {
       res.status(400).json({
-        status: 'error',
+        status: "error",
         message: error.message,
-      })
+      });
     }
   },
   async loggedUser(req, res) {
     try {
-      const user: any = await User.findById(req.user._id)
-      res.status(200).json({ status: 'success', data: user })
+      const user: any = await User.findById(req.user._id);
+      res.status(200).json({ status: "success", data: user });
     } catch (error) {
       res.status(400).json({
-        status: 'error',
+        status: "error",
         message: error.message,
-      })
+      });
+    }
+  },
+
+  async verify(req, res) {
+    try {
+      const { token } = req.params;
+      const data: any = jwt.verify(token, process.env.JWT_SECRET);
+      const user: any = await User.create(data.data);
+      await user.generateAuthToken();
+      await user.save();
+
+      res.status(200).json({
+        status: "success",
+        message: "User created",
+        data: { user },
+      });
+    } catch (error) {
+      res.status(400).json({
+        status: "error",
+        message: error.message,
+      });
     }
   },
 
   async create(req, res) {
     try {
-      const user: any = await User.create(req.body)
-      await user.generateAuthToken()
+      const userData = req.body;
+      const exists = await checkIfExists(userData?.email);
 
-      await user.save()
-
-      res.status(200).json({ status: 'success', message: 'User created', data: { token: user.token } })
+      if (exists)
+        res.status(403).json({
+          status: "failute",
+          message: "Email already exists",
+        });
+      else {
+        await sendVerificationEmail(userData?.email, userData);
+        res.status(200).json({
+          status: "success",
+          message: "Verfication email sent",
+        });
+      }
     } catch (error) {
       res.status(400).json({
-        status: 'error',
+        status: "error",
         message: error.message,
-      })
+      });
     }
   },
 
   async update(req, res) {
     try {
-      const { id } = req.params
+      const { id } = req.params;
       await User.findByIdAndUpdate(
         id,
         { $set: req.body },
-        { upsert: false, new: true },
-      )
+        { upsert: false, new: true }
+      );
 
-      res.status(200).json({ status: 'success', message: 'User updated' })
+      res.status(200).json({ status: "success", message: "User updated" });
     } catch (error) {
       res.status(400).json({
-        status: 'error',
+        status: "error",
         message: error.message,
-      })
+      });
     }
   },
 
   async deleteUser(req, res) {
     try {
-      const { id } = req.params
-      await User.findByIdAndDelete(id)
+      const { id } = req.params;
+      await User.findByIdAndDelete(id);
 
-      res.status(200).json({ status: 'success', message: 'User deleted' })
+      res.status(200).json({ status: "success", message: "User deleted" });
     } catch (error) {
       res.status(400).json({
-        status: 'error',
+        status: "error",
         message: error.message,
-      })
+      });
     }
   },
 
   async deleteAll(req, res) {
     try {
-      await User.deleteMany({})
-      res.status(200).json({ status: 'success', message: 'All users deleted' })
+      await User.deleteMany({});
+      res.status(200).json({ status: "success", message: "All users deleted" });
     } catch (error) {
       res.status(400).json({
-        status: 'error',
+        status: "error",
         message: error.message,
-      })
+      });
     }
   },
+};
 
-}
-
-export default userController
+export default userController;
