@@ -32,6 +32,7 @@ const quotationController = {
   },
 
   async create(req, res) {
+    console.log("reached herer");
     try {
       const quotation: any = new Quotation({
         name: req.body.name,
@@ -48,7 +49,7 @@ const quotationController = {
         standSize: req.body.standSize,
       });
       await quotation.save();
-      res.status(200).json({ status: "success", message: "Service created" });
+      res.status(200).json({ status: "success", message: "Quotation created" });
     } catch (error) {
       res.status(400).json({
         status: "error",
@@ -79,7 +80,7 @@ const quotationController = {
       const { id } = req.params;
       await Quotation.findByIdAndDelete(id);
 
-      res.status(200).json({ status: "success", message: "Service deleted" });
+      res.status(200).json({ status: "success", message: "Quotation deleted" });
     } catch (error) {
       res.status(400).json({
         status: "error",
@@ -92,7 +93,7 @@ const quotationController = {
       await Quotation.deleteMany({});
       res
         .status(200)
-        .json({ status: "success", message: "All services deleted" });
+        .json({ status: "success", message: "All Quotation deleted" });
     } catch (error) {
       res.status(400).json({
         status: "error",
