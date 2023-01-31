@@ -1,0 +1,111 @@
+Date : 2023-01-31 11:41:41
+Directory : c:\Users\hp\exhime_backend
+Total : 48 files,  8056 codes, 391 comments, 1274 blanks, all 9721 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| Log                |          1 |      6,932 |          0 |      1,053 |      7,985 |
+| TypeScript         |         40 |        956 |        385 |        217 |      1,558 |
+| JSON               |          4 |        113 |          0 |          2 |        115 |
+| JSON with Comments |          1 |         27 |          6 |          1 |         34 |
+| JavaScript         |          1 |         27 |          0 |          0 |         27 |
+| Markdown           |          1 |          1 |          0 |          1 |          2 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                    | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                       |         48 |      8,056 |        391 |      1,274 |      9,721 |
+| . (Files)                                                               |          8 |      7,099 |         12 |      1,061 |      8,172 |
+| src                                                                     |         40 |        957 |        379 |        213 |      1,549 |
+| src (Files)                                                             |          5 |         67 |         15 |         30 |        112 |
+| src\config                                                              |          6 |         42 |         47 |         18 |        107 |
+| src\config (Files)                                                      |          1 |          0 |         33 |          7 |         40 |
+| src\config\database                                                     |          3 |         35 |         14 |          9 |         58 |
+| src\config\swagger                                                      |          1 |          1 |          0 |          0 |          1 |
+| src\config\testSetup                                                    |          1 |          6 |          0 |          2 |          8 |
+| src\controllers                                                         |          6 |        469 |          0 |         52 |        521 |
+| src\controllers\auth                                                    |          1 |         42 |          0 |          8 |         50 |
+| src\controllers\general                                                 |          1 |         26 |          0 |          5 |         31 |
+| src\controllers\item                                                    |          1 |         84 |          0 |          9 |         93 |
+| src\controllers\quotation                                               |          1 |         98 |          0 |          9 |        107 |
+| src\controllers\service                                                 |          1 |         94 |          0 |          8 |        102 |
+| src\controllers\user                                                    |          1 |        125 |          0 |         13 |        138 |
+| src\helpers                                                             |          2 |         64 |          1 |         13 |         78 |
+| src\middleware                                                          |          2 |         38 |          2 |          9 |         49 |
+| src\models                                                              |          4 |        108 |         14 |         24 |        146 |
+| src\models\Item                                                         |          1 |          7 |          0 |          3 |         10 |
+| src\models\Quotation                                                    |          1 |         17 |          0 |          3 |         20 |
+| src\models\Service                                                      |          1 |          9 |          0 |          3 |         12 |
+| src\models\User                                                         |          1 |         75 |         14 |         15 |        104 |
+| src\routes                                                              |          6 |         58 |        260 |         46 |        364 |
+| src\routes\auth                                                         |          1 |          7 |          1 |          4 |         12 |
+| src\routes\general                                                      |          1 |          9 |         12 |          6 |         27 |
+| src\routes\item                                                         |          1 |         10 |         83 |         11 |        104 |
+| src\routes\quotation                                                    |          1 |         10 |         81 |         10 |        101 |
+| src\routes\service                                                      |          1 |         10 |         81 |         10 |        101 |
+| src\routes\user                                                         |          1 |         12 |          2 |          5 |         19 |
+| src\tests                                                               |          3 |         59 |          0 |          6 |         65 |
+| src\tests (Files)                                                       |          2 |         37 |          0 |          6 |         43 |
+| src\tests\fixtures                                                      |          1 |         22 |          0 |          0 |         22 |
+| src\types                                                               |          2 |         12 |          0 |          2 |         14 |
+| src\util                                                                |          4 |         40 |         40 |         13 |         93 |
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                | language           | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\hp\exhime_backend\README.md                                    | Markdown           |          1 |          0 |          1 |          2 |
+| c:\Users\hp\exhime_backend\babel.config.js                              | JavaScript         |         27 |          0 |          0 |         27 |
+| c:\Users\hp\exhime_backend\jest-mongodb-config.ts                       | TypeScript         |         12 |          0 |          1 |         13 |
+| c:\Users\hp\exhime_backend\jest.config.ts                               | TypeScript         |         10 |          6 |          3 |         19 |
+| c:\Users\hp\exhime_backend\package.json                                 | JSON               |         74 |          0 |          1 |         75 |
+| c:\Users\hp\exhime_backend\src\app.ts                                   | TypeScript         |         38 |          4 |         15 |         57 |
+| c:\Users\hp\exhime_backend\src\config\database\mongo.interface.ts       | TypeScript         |          0 |         14 |          2 |         16 |
+| c:\Users\hp\exhime_backend\src\config\database\mongo.ts                 | TypeScript         |         13 |          0 |          4 |         17 |
+| c:\Users\hp\exhime_backend\src\config\database\mongoMemory.ts           | TypeScript         |         22 |          0 |          3 |         25 |
+| c:\Users\hp\exhime_backend\src\config\logger.ts                         | TypeScript         |          0 |         33 |          7 |         40 |
+| c:\Users\hp\exhime_backend\src\config\swagger\swagger.json              | JSON               |          1 |          0 |          0 |          1 |
+| c:\Users\hp\exhime_backend\src\config\testSetup\setupMongoMemoryTest.ts | TypeScript         |          6 |          0 |          2 |          8 |
+| c:\Users\hp\exhime_backend\src\controllers\auth\index.ts                | TypeScript         |         42 |          0 |          8 |         50 |
+| c:\Users\hp\exhime_backend\src\controllers\general\index.ts             | TypeScript         |         26 |          0 |          5 |         31 |
+| c:\Users\hp\exhime_backend\src\controllers\item\index.ts                | TypeScript         |         84 |          0 |          9 |         93 |
+| c:\Users\hp\exhime_backend\src\controllers\quotation\index.ts           | TypeScript         |         98 |          0 |          9 |        107 |
+| c:\Users\hp\exhime_backend\src\controllers\service\index.ts             | TypeScript         |         94 |          0 |          8 |        102 |
+| c:\Users\hp\exhime_backend\src\controllers\user\index.ts                | TypeScript         |        125 |          0 |         13 |        138 |
+| c:\Users\hp\exhime_backend\src\helpers\checkUserExists.ts               | TypeScript         |         13 |          0 |          3 |         16 |
+| c:\Users\hp\exhime_backend\src\helpers\sendVerificationEmail.ts         | TypeScript         |         51 |          1 |         10 |         62 |
+| c:\Users\hp\exhime_backend\src\middleware\auth.ts                       | TypeScript         |         18 |          1 |          5 |         24 |
+| c:\Users\hp\exhime_backend\src\middleware\lightAuth.ts                  | TypeScript         |         20 |          1 |          4 |         25 |
+| c:\Users\hp\exhime_backend\src\models\Item\index.ts                     | TypeScript         |          7 |          0 |          3 |         10 |
+| c:\Users\hp\exhime_backend\src\models\Quotation\index.ts                | TypeScript         |         17 |          0 |          3 |         20 |
+| c:\Users\hp\exhime_backend\src\models\Service\index.ts                  | TypeScript         |          9 |          0 |          3 |         12 |
+| c:\Users\hp\exhime_backend\src\models\User\index.ts                     | TypeScript         |         75 |         14 |         15 |        104 |
+| c:\Users\hp\exhime_backend\src\router.ts                                | TypeScript         |          8 |          0 |          2 |         10 |
+| c:\Users\hp\exhime_backend\src\routes\auth\index.ts                     | TypeScript         |          7 |          1 |          4 |         12 |
+| c:\Users\hp\exhime_backend\src\routes\general\index.ts                  | TypeScript         |          9 |         12 |          6 |         27 |
+| c:\Users\hp\exhime_backend\src\routes\item\index.ts                     | TypeScript         |         10 |         83 |         11 |        104 |
+| c:\Users\hp\exhime_backend\src\routes\quotation\index.ts                | TypeScript         |         10 |         81 |         10 |        101 |
+| c:\Users\hp\exhime_backend\src\routes\service\index.ts                  | TypeScript         |         10 |         81 |         10 |        101 |
+| c:\Users\hp\exhime_backend\src\routes\user\index.ts                     | TypeScript         |         12 |          2 |          5 |         19 |
+| c:\Users\hp\exhime_backend\src\server.test.ts                           | TypeScript         |         12 |          0 |          3 |         15 |
+| c:\Users\hp\exhime_backend\src\server.ts                                | TypeScript         |          7 |          1 |          4 |         12 |
+| c:\Users\hp\exhime_backend\src\testServer.ts                            | TypeScript         |          2 |         10 |          6 |         18 |
+| c:\Users\hp\exhime_backend\src\tests\api.test.ts                        | TypeScript         |         35 |          0 |          5 |         40 |
+| c:\Users\hp\exhime_backend\src\tests\config.ts                          | TypeScript         |          2 |          0 |          1 |          3 |
+| c:\Users\hp\exhime_backend\src\tests\fixtures\data.json                 | JSON               |         22 |          0 |          0 |         22 |
+| c:\Users\hp\exhime_backend\src\types\Service.d.ts                       | TypeScript         |          6 |          0 |          1 |          7 |
+| c:\Users\hp\exhime_backend\src\types\User.d.ts                          | TypeScript         |          6 |          0 |          1 |          7 |
+| c:\Users\hp\exhime_backend\src\util\.s3Methods.ts                       | TypeScript         |          0 |         38 |          8 |         46 |
+| c:\Users\hp\exhime_backend\src\util\anyInterface.ts                     | TypeScript         |          3 |          0 |          1 |          4 |
+| c:\Users\hp\exhime_backend\src\util\csvToJson.ts                        | TypeScript         |         11 |          0 |          2 |         13 |
+| c:\Users\hp\exhime_backend\src\util\uploadToS3.ts                       | TypeScript         |         26 |          2 |          2 |         30 |
+| c:\Users\hp\exhime_backend\tsconfig.json                                | JSON with Comments |         27 |          6 |          1 |         34 |
+| c:\Users\hp\exhime_backend\vercel.json                                  | JSON               |         16 |          0 |          1 |         17 |
+| c:\Users\hp\exhime_backend\yarn-error.log                               | Log                |      6,932 |          0 |      1,053 |      7,985 |
+| Total                                                                   |                    |      8,056 |        391 |      1,274 |      9,721 |
++-------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
