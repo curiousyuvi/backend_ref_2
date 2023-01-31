@@ -3,8 +3,8 @@ import User from "../models/User";
 
 const auth = async (req, res, next) => {
   try {
-    // const token = req.header("Authorization").replace("Bearer ", "");
-    const token = req.cookies.token;
+    const token = req.header("Authorization").replace("Bearer ", "");
+    // const token = req.cookies?.token;
 
     const data: any = jwt.verify(token, process.env.JWT_SECRET);
 
