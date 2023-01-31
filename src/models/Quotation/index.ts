@@ -8,7 +8,7 @@ const quotationSchema = new mongoose.Schema({
   design: String,
   budget: String,
   floorPlan: String,
-  standType: Number,
+  standType: String,
   email: String,
   phoneNumber: Number,
   otherItems: String,
