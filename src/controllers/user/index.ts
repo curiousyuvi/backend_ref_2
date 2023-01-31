@@ -32,10 +32,13 @@ const userController = {
     }
   },
   async loggedUser(req, res) {
+    console.log("reached here", req.user);
     try {
       const user: any = await User.findById(req.user._id);
       res.status(200).json({ status: "success", data: user });
     } catch (error) {
+      console.log(error);
+
       res.status(400).json({
         status: "error",
         message: error.message,
@@ -51,6 +54,12 @@ const userController = {
       await user.generateAuthToken();
       await user.save();
 
+      // res.cookie("token", user.token, {
+      //   httpOnly: true,
+      //   secure: process.env.NODE_ENV === "production" ? true : false,
+      //   maxAge: 1000 * 60 * 60 * 24 * 30,
+      // });
+      delete user.password;
       res.status(200).json({
         status: "success",
         message: "User created",

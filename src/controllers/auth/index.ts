@@ -15,11 +15,11 @@ const authController = {
 
       if (user) await user.generateAuthToken();
 
-      res.cookie("token", user.token, {
-        httpOnly: true,
-        secure: true,
-        maxAge: 1000 * 60 * 60 * 24 * 30,
-      });
+      // res.cookie("token", user.token, {
+      //   httpOnly: true,
+      //   secure: process.env.NODE_ENV === "production" ? true : false,
+      //   maxAge: 1000 * 60 * 60 * 24 * 30,
+      // });
 
       res.status(200).json({ status: "success", data: { user } });
     } catch (error) {
@@ -32,10 +32,10 @@ const authController = {
 
   async logout(req, res) {
     try {
-      res.clearCookie("token", {
-        httpOnly: true,
-        expires: new Date(1),
-      });
+      // res.clearCookie("token", {
+      //   httpOnly: true,
+      //   expires: new Date(1),
+      // });
 
       res.status(200).json({ status: "success", message: "User disconnected" });
     } catch (error) {
