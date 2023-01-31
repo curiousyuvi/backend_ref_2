@@ -12,7 +12,7 @@ const quotationSchema = new mongoose.Schema({
   email: String,
   phoneNumber: Number,
   otherItems: String,
-  standSize: String,
+  standSize: Number,
 });
 
 const Quotation = mongoose.model("Quotation", quotationSchema);
