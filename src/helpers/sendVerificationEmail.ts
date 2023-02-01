@@ -17,16 +17,14 @@ export const sendVerificationEmail = (verifyEmail: string, userData: any) => {
       data: userData,
     },
     process.env.JWT_SECRET,
-    { expiresIn: 600 }
+    { expiresIn: process.env.VERIFY_LINK_LIFE }
   );
 
   console.log("token sent =>", token);
 
   const mailConfigurations = {
     from: "verifyemail@exhime.com",
-
     to: verifyEmail,
-
     subject: "Complete your registration with exhime.com, verify your email",
 
     // This would be the text of email body
