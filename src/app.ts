@@ -21,8 +21,8 @@ const limiter = rateLimit({
 });
 
 const allowedOrigins = [
-  "http://exhime.com",
-  "http://dev.exhime.com",
+  "https://exhime.com",
+  "https://dev.exhime.com",
   "http://localhost:3000",
 ];
 
