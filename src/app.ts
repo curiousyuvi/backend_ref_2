@@ -42,7 +42,11 @@ const corsOptions = {
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors(corsOptions));
+if (process.env.NODE_ENV === "production") {
+  app.use(cors(corsOptions));
+} else {
+  app.use(cors());
+}
 app.use(helmet());
 app.use(morgan("tiny"));
 
