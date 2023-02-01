@@ -36,6 +36,7 @@ const corsOptions = {
   },
   methods: ["GET", "POST", "PATCH", "DELETE"],
   credentials: true,
+  allowedHeaders: ["postman-token", "Content-Type"],
 };
 
 const app = express();

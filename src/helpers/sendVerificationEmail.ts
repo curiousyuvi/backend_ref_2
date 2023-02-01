@@ -17,8 +17,10 @@ export const sendVerificationEmail = (verifyEmail: string, userData: any) => {
       data: userData,
     },
     process.env.JWT_SECRET,
-    { expiresIn: "10m" }
+    { expiresIn: 600 }
   );
+
+  console.log("token sent =>", token);
 
   const mailConfigurations = {
     from: "verifyemail@exhime.com",
