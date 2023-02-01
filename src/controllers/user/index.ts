@@ -50,6 +50,7 @@ const userController = {
     try {
       const { token } = req.params;
       const data: any = jwt.verify(token, process.env.JWT_SECRET);
+      console.log(data);
       const user: any = await User.create({
         fname: data.data.fname,
         lname: data.data.lname,
