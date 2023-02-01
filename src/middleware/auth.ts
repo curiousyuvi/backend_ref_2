@@ -9,6 +9,7 @@ const auth = async (req, res, next) => {
     const data: any = jwt.verify(token, process.env.JWT_SECRET);
 
     const user: any = await User.findOne({ email: data.email, token });
+    // trigger pipeline
 
     if (!user) throw new Error();
     req.user = user;
