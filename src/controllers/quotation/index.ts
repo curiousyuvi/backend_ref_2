@@ -1,3 +1,4 @@
+import axios from "axios";
 import Quotation from "../../models/Quotation";
 
 const quotationController = {
@@ -34,6 +35,10 @@ const quotationController = {
   async create(req, res) {
     console.log("reached herer");
     try {
+      axios.post(
+        "https://sheet.best/api/sheets/07da17a3-60e5-4d44-bd0e-dae194e1ac3f/tabs/Quotations",
+        req.body
+      );
       const quotation: any = new Quotation({
         name: req.body.name,
         startDate: req.body.startDate,
