@@ -33,26 +33,19 @@ const quotationController = {
   },
 
   async create(req, res) {
-    console.log("reached herer");
+    const hstartDate = new Date(req.body.startDate * 1000);
+    const hendDate = new Date(req.body.endDate * 1000);
+
     try {
-      axios.post(
+      await axios.post(
         "https://sheet.best/api/sheets/07da17a3-60e5-4d44-bd0e-dae194e1ac3f/tabs/Quotations",
-        req.body
+        {
+          ...req.body,
+          startDate: hstartDate.toLocaleString(),
+          endDate: hendDate.toLocaleString(),
+        }
       );
-      const quotation: any = new Quotation({
-        name: req.body.name,
-        startDate: req.body.startDate,
-        endDate: req.body.endDate,
-        eventLocation: req.body.eventLocation,
-        design: req.body.design,
-        budget: req.body.budget,
-        floorPlan: req.body.floorPlan,
-        standType: req.body.standType,
-        email: req.body.email,
-        phoneNumber: req.body.phoneNumber,
-        otherItems: req.body.otherItems,
-        standSize: req.body.standSize,
-      });
+      const quotation: any = new Quotation(req.body);
       await quotation.save();
       res.status(200).json({ status: "success", message: "Quotation created" });
     } catch (error) {
