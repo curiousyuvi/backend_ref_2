@@ -15,6 +15,8 @@ const becomeFabricatorSchema = new mongoose.Schema({
   passportPhoto: String,
   companyCertificate: String,
   cancelledCheque: String,
+  companyLogo: String,
+  exhibitionImage: String,
 });
 
 const BecomeFabricator = mongoose.model(
