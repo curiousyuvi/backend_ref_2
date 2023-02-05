@@ -49,6 +49,8 @@ const becomeFabricatorController = {
         passportPhoto: req.body.passportPhoto,
         companyCertificate: req.body.companyCertificate,
         cancelledCheque: req.body.cancelledCheque,
+        exhibitionImage: req.body.exhibitionImage,
+        companyLogo: req.body.companyLogo,
       });
 
       await becomeFabricator.save();
