@@ -5,6 +5,7 @@ const quotationSchema = new mongoose.Schema({
   startDate: Number,
   endDate: Number,
   eventLocation: String,
+  eventName: String,
   design: String,
   budget: String,
   floorPlan: String,
