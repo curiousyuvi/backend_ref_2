@@ -13,7 +13,8 @@ const quotationSchema = new mongoose.Schema({
   email: String,
   phoneNumber: Number,
   otherItems: String,
-  standSize: Number,
+  standSizeLength: Number,
+  standSizeBreadth: Number,
 });
 
 const Quotation = mongoose.model("Quotation", quotationSchema);
