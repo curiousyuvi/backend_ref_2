@@ -12,7 +12,10 @@ const quotationSchema = new mongoose.Schema({
   standType: String,
   email: String,
   phoneNumber: Number,
-  otherItems: String,
+
+  otherItems: [String],
+
+
   standSizeLength: Number,
   standSizeBreadth: Number,
 });
