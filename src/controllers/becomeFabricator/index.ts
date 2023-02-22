@@ -7,7 +7,7 @@ const becomeFabricatorController = {
       let becomeFabricator = [];
 
       becomeFabricator = await BecomeFabricator.find();
-
+       
       res.status(200).json({
         status: "success",
         data: becomeFabricator,

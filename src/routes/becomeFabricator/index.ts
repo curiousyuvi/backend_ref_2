@@ -18,6 +18,20 @@ router.get("/api/v1/becomeFabricator", BecomeFabricator.index);
 
 /**
  * @swagger
+ *  /item/:id:
+ *    get:
+ *      summary: Retrieve a unique item
+ *      description: Show item data
+ *      tags:
+ *      - Item
+ *    responses:
+ *      200:
+ *        description: Retorna um objeto
+ */
+router.get("/api/v1/becomeFabricator/:id", BecomeFabricator.show);
+
+/**
+ * @swagger
  * /users:
  *   get:
  *     summary: Retrieve a list of JSONPlaceholder users
