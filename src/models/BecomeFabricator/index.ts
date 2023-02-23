@@ -17,6 +17,15 @@ const becomeFabricatorSchema = new mongoose.Schema({
   cancelledCheque: String,
   companyLogo: String,
   exhibitionImage: String,
+  Location: String,
+  About: String,
+  Services: [String],
+  contactPhoneNumber: String,
+  contactEmail: String,
+  contactAddress: String,
+  contactLinkdin: String,
+  contactTwitter: String,
+  contactFacebook: String,
 });
 
 const BecomeFabricator = mongoose.model(
