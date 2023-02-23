@@ -7,7 +7,7 @@ const becomeFabricatorController = {
       let becomeFabricator = [];
 
       becomeFabricator = await BecomeFabricator.find();
-       
+
       res.status(200).json({
         status: "success",
         data: becomeFabricator,
@@ -51,6 +51,15 @@ const becomeFabricatorController = {
         cancelledCheque: req.body.cancelledCheque,
         exhibitionImage: req.body.exhibitionImage,
         companyLogo: req.body.companyLogo,
+        Location: req.body.Location,
+        About: req.body.About,
+        Services: req.body.Services,
+        contactPhoneNumber: req.body.contactPhoneNumber,
+        contactEmail: req.body.contactEmail,
+        contactAddress: req.body.contactAddress,
+        contactLinkdin: req.body.contactLinkdin,
+        contactTwitter: req.body.contactTwitter,
+        contactFacebook: req.body.contactFacebook,
       });
 
       await becomeFabricator.save();
