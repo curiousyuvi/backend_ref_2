@@ -60,6 +60,14 @@ const becomeFabricatorController = {
         contactLinkdin: req.body.contactLinkdin,
         contactTwitter: req.body.contactTwitter,
         contactFacebook: req.body.contactFacebook,
+
+        img1: req.body.img1,
+        img2: req.body.img2,
+        img3: req.body.img3,
+        img4: req.body.img4,
+        img5: req.body.img5,
+        img6: req.body.img6,
+
       });
 
       await becomeFabricator.save();
