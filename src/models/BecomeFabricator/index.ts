@@ -26,6 +26,7 @@ const becomeFabricatorSchema = new mongoose.Schema({
   contactLinkdin: String,
   contactTwitter: String,
   contactFacebook: String,
+
   img1: String,
   img2: String,
 
@@ -33,6 +34,7 @@ const becomeFabricatorSchema = new mongoose.Schema({
   img4: String,
   img5: String,
   img6: String,
+
 });
 
 const BecomeFabricator = mongoose.model(
