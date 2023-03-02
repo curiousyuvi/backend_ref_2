@@ -5,14 +5,19 @@ const quotationSchema = new mongoose.Schema({
   startDate: Number,
   endDate: Number,
   eventLocation: String,
+  eventName: String,
   design: String,
   budget: String,
   floorPlan: String,
   standType: String,
   email: String,
   phoneNumber: Number,
-  otherItems: String,
-  standSize: Number,
+
+  otherItems: [String],
+
+
+  standSizeLength: Number,
+  standSizeBreadth: Number,
 });
 
 const Quotation = mongoose.model("Quotation", quotationSchema);

@@ -34,6 +34,7 @@ const becomeFabricatorController = {
 
   async create(req, res) {
     try {
+
       const becomeFabricator: any = new BecomeFabricator(
         // name: req.body.name,
         // designation: req.body.designation,
@@ -68,6 +69,8 @@ const becomeFabricatorController = {
         // img6: req.body.img6,
         req.body
       );
+
+    
 
       await becomeFabricator.save();
       res
